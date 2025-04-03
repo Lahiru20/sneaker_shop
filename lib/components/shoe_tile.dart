@@ -22,19 +22,13 @@ class Shoetile extends StatelessWidget {
             child: Image.asset(shoe.imagePath),
           ),
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              shoe.description,
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-          ),
+          Text(shoe.description, style: TextStyle(color: Colors.grey[600])),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 5),
+                padding: const EdgeInsets.only(left: 10, bottom: 2),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -43,7 +37,7 @@ class Shoetile extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 14,
                       ),
                     ),
                     Text(
@@ -51,14 +45,14 @@ class Shoetile extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 12,
+                        fontSize: 10,
                       ),
                     ),
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.only(
