@@ -23,7 +23,13 @@ class Shoetile extends StatelessWidget {
             child: Image.asset(shoe.imagePath),
           ),
 
-          Text(shoe.description, style: TextStyle(color: Colors.grey[600])),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              shoe.description,
+              style: TextStyle(color: Colors.grey[600], fontSize: 10),
+            ),
+          ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

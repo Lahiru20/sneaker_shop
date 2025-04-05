@@ -25,7 +25,11 @@ class _CartItemState extends State<CartItem> {
       ),
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
-        leading: Image.asset(widget.shoe.name),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(8)),
+          child: Image.asset(widget.shoe.imagePath),
+        ),
+        title: Text(widget.shoe.name),
         subtitle: Text(widget.shoe.price),
         trailing: IconButton(
           onPressed: removeItemFromCart,
