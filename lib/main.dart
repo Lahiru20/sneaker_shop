@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sneaker_shop/components/model/cart.dart';
+import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/pages/homepage.dart';
 import 'package:sneaker_shop/pages/intro_page.dart';
 

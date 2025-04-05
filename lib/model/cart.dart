@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sneaker_shop/components/model/shoe.dart';
+import 'package:sneaker_shop/model/shoe.dart';
 
 class Cart extends ChangeNotifier {
   List<Shoe> shoeList = [

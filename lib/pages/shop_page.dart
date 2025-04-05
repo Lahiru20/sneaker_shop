@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sneaker_shop/components/model/cart.dart';
-import 'package:sneaker_shop/components/model/shoe.dart';
+import 'package:sneaker_shop/model/cart.dart';
+import 'package:sneaker_shop/model/shoe.dart';
 import 'package:sneaker_shop/components/shoe_tile.dart';
 
 class ShopPage extends StatefulWidget {
@@ -12,6 +12,19 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+  void addShoeToCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToCart(shoe);
+
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            title: Text("Successfully Added!"),
+            content: Text("Check your cart"),
+          ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -71,7 +84,10 @@ class _ShopPageState extends State<ShopPage> {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     Shoe shoe = value.getShoeList()[index];
-                    return Shoetile(shoe: shoe);
+                    return Shoetile(
+                      shoe: shoe,
+                      onTap: () => addShoeToCart(shoe),
+                    );
                   },
                 ),
               ),

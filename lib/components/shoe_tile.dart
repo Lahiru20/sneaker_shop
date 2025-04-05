@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sneaker_shop/components/model/shoe.dart';
+import 'package:sneaker_shop/model/shoe.dart';
 
 class Shoetile extends StatelessWidget {
   Shoe shoe;
-  Shoetile({super.key, required this.shoe});
+  void Function()? onTap;
+  Shoetile({super.key, required this.shoe, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +52,18 @@ class Shoetile extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(12),
+              GestureDetector(
+                onTap: onTap,
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(12),
+                    ),
                   ),
+                  child: Icon(Icons.add, color: Colors.white),
                 ),
-                child: Icon(Icons.add, color: Colors.white),
               ),
             ],
           ),
